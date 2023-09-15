@@ -1,0 +1,39 @@
+.patient-dashboard-outer {
+    width: 100%;
+    height: 100vh;
+}
+
+.patient-dashboard-inner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner-items {
+    height: auto;
+    padding: 20px 10px;
+}
+
+.search-bar{
+    margin: 20px 0;
+}
+
+.table-outer {
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: auto;
+}
+
+.all-patients {
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 5px 10px;
+}
+
+.inner-items-right{
+
+}
