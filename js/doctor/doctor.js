@@ -1,7 +1,5 @@
 let doctorId;
 const createDoctor = () => {
-
-    // Check if the confirmation checkbox is checked
     const confirmed = document.getElementById('completeForm');
     if (!confirmed.checked) {
         alert('Please confirm before creating a doctor.');
