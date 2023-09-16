@@ -17,20 +17,18 @@
                 <div class="col-12 col-lg-8 inner-items inner-items-left">
                     <div class="row">
                         <div class="col-12 col-lg-3">
-                            <div class="all-patients">
+                            <div class="all-patients border">
                                 <div class="all-patients-inner">
-                                    <div>icon</div>
-                                    <div>Title</div>
-                                    <div>Sub-Title</div>
+                                    <div><i class="fa-solid fa-hospital-user"></i></div>
+                                    <div class="tot-patients">Total Patients <span id="patientCount"></span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="search-bar">
                         <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search Patients"
-                                   aria-label="Search">
-                            <button class="btn btn-success" type="submit">Search</button>
+                            <input class="form-control me-2" type="search" placeholder="Search Patients By Name"
+                                   aria-label="Search" id="searchInput" onkeyup="searchPatient()">
                         </form>
                     </div>
                     <div class="table-outer">
@@ -54,8 +52,9 @@
                 </div>
                 <div class="col-12 col-lg-4 inner-items inner-items-right">
                     <div class="form-outer">
-                        <h1>Add Patient</h1>
-                        <form class="row g-3" id="patientForm">
+
+                        <form class="row g-3 border p-2 rounded" id="patientForm">
+                            <h1>Manage Patients</h1>
                             <div class="col-md-10">
                                 <label for="name" class="form-label">Name</label>
                                 <input required type="text" class="form-control" id="name" placeholder="Tasheela">
@@ -98,6 +97,11 @@
                                     Patient
                                 </button>
                             </div>
+                            <div class="col-12">
+                                <button class="btn btn-primary w-100" type="button" onclick="updatePatientRecords()" id="updateBtn">Update
+                                    Patient
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -112,5 +116,6 @@
 <script src="../../../js/firebase_configure.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../../../js/patient/patient.js"></script>
+<script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
 </body>
 </html>
