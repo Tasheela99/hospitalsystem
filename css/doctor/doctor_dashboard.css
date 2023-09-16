@@ -1,0 +1,26 @@
+
+.doctor-form{
+    border: 1px solid lightgray;
+    padding: 20px 30px;
+    border-radius: 10px;
+
+}
+.search-doctor{
+    margin: 20px 0;
+}
+
+.table-outer{
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    scrollbar-width: auto;
+    max-height: 300px;
+    margin: 50px 0;
+}
+
+@media (max-width: 998px) {
+    .table-outer{
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+}

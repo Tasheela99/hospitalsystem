@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="../../../css/doctor/doctor_dashboard.css">
+</head>
+<body>
+
+<div class="doctor-dashboard-outer">
+    <div class="doctor-dashboard-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Manage Doctors</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <img src="../../../assets/images/doctor.jpg" alt="Doctor Image" width="100%">
+                </div>
+                <div class="col-12 col-lg-6 doctor-form">
+                    <div class="col-12">
+                        <h2>Add Doctors</h2>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="doctorName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="doctorName" placeholder="Name">
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="doctorSpecialization" class="form-label">Specialization</label>
+                        <select id="doctorSpecialization" class="form-select">
+                            <option value="Cardiologist">Cardiologist</option>
+                            <option value="Dermatologist">Dermatologist</option>
+                            <option value="Endocrinologist">Endocrinologist</option>
+                            <option value="Gastroenterologist">Gastroenterologist</option>
+                            <option value="Hematologist">Hematologist</option>
+                            <option value="Nephrologist">Nephrologist</option>
+                            <option value="Neurologist">Neurologist</option>
+                            <option value="Obstetrician-Gynecologist">Obstetrician-Gynecologist (OB-GYN)</option>
+                            <option value="Oncologist">Oncologist</option>
+                            <option value="Ophthalmologist">Ophthalmologist</option>
+                            <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>
+                            <option value="Otolaryngologist">Otolaryngologist (ENT Specialist)</option>
+                            <option value="Pediatrician">Pediatrician</option>
+                            <option value="Psychiatrist">Psychiatrist</option>
+                            <option value="Pulmonologist">Pulmonologist</option>
+                            <option value="Rheumatologist">Rheumatologist</option>
+                            <option value="Urologist">Urologist</option>
+                            <option value="Anesthesiologist">Anesthesiologist</option>
+                            <option value="Emergency Medicine Physician">Emergency Medicine Physician</option>
+                            <option value="Family Medicine Physician">Family Medicine Physician</option>
+                            <option value="Geriatrician">Geriatrician</option>
+                            <option value="Infectious Disease Specialist">Infectious Disease Specialist</option>
+                            <option value="Physical Medicine and Rehabilitation Physician">Physical Medicine and Rehabilitation (PM&R) Physician</option>
+                            <option value="Allergist/Immunologist">Allergist/Immunologist</option>
+                            <option value="Pathologist">Pathologist</option>
+                            <option value="Radiologist">Radiologist</option>
+                            <option value="Nuclear Medicine Physician">Nuclear Medicine Physician</option>
+                            <option value="Other">Other</option>
+
+                        </select>
+                    </div>
+                    <div class="col-12  mb-3">
+                        <label for="doctorProvince" class="form-label">Province</label>
+                        <select id="doctorProvince" class="form-select">
+                            <option value="Central Province">Central Province</option>
+                            <option value="Eastern Province">Eastern Province</option>
+                            <option value="North Central Province">North Central Province</option>
+                            <option value="Northern Province">Northern Province</option>
+                            <option value="North Western Province">North Western Province</option>
+                            <option value="Sabaragamuwa Province">Sabaragamuwa Province</option>
+                            <option value="Southern Province">Southern Province</option>
+                            <option value="Uva Province">Uva Province</option>
+                            <option value="Western Province">Western Province</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-12  mb-3">
+                        <label for="doctorCity" class="form-label">City</label>
+                        <select id="doctorCity" class="form-select">
+                            <option value="Colombo">Colombo</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Kalutara">Kalutara</option>
+                            <option value="Kandy">Kandy</option>
+                            <option value="Matale">Matale</option>
+                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                            <option value="Galle">Galle</option>
+                            <option value="Matara">Matara</option>
+                            <option value="Hambantota">Hambantota</option>
+                            <option value="Jaffna">Jaffna</option>
+                            <option value="Kilinochchi">Kilinochchi</option>
+                            <option value="Mannar">Mannar</option>
+                            <option value="Vavuniya">Vavuniya</option>
+                            <option value="Mullaitivu">Mullaitivu</option>
+                            <option value="Batticaloa">Batticaloa</option>
+                            <option value="Ampara">Ampara</option>
+                            <option value="Trincomalee">Trincomalee</option>
+                            <option value="Kurunegala">Kurunegala</option>
+                            <option value="Puttalam">Puttalam</option>
+                            <option value="Anuradhapura">Anuradhapura</option>
+                            <option value="Polonnaruwa">Polonnaruwa</option>
+                            <option value="Badulla">Badulla</option>
+                            <option value="Monaragala">Monaragala</option>
+                            <option value="Ratnapura">Ratnapura</option>
+                            <option value="Kegalle">Kegalle</option>
+                            <option value="Colombo">Colombo</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Kalutara">Kalutara</option>
+                            <option value="Kandy">Kandy</option>
+                            <option value="Matale">Matale</option>
+                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                            <option value="Galle">Galle</option>
+                            <option value="Matara">Matara</option>
+                            <option value="Hambantota">Hambantota</option>
+                            <option value="Jaffna">Jaffna</option>
+                            <option value="Kilinochchi">Kilinochchi</option>
+                            <option value="Mannar">Mannar</option>
+                            <option value="Vavuniya">Vavuniya</option>
+                            <option value="Mullaitivu">Mullaitivu</option>
+                            <option value="Batticaloa">Batticaloa</option>
+                            <option value="Ampara">Ampara</option>
+                            <option value="Trincomalee">Trincomalee</option>
+                            <option value="Kurunegala">Kurunegala</option>
+                            <option value="Puttalam">Puttalam</option>
+                            <option value="Anuradhapura">Anuradhapura</option>
+                            <option value="Polonnaruwa">Polonnaruwa</option>
+                            <option value="Badulla">Badulla</option>
+                            <option value="Monaragala">Monaragala</option>
+                            <option value="Ratnapura">Ratnapura</option>
+                            <option value="Kegalle">Kegalle</option>
+                            <option value="Colombo">Colombo</option>
+                            <option value="Gampaha">Gampaha</option>
+                            <option value="Kalutara">Kalutara</option>
+                            <option value="Kandy">Kandy</option>
+                            <option value="Matale">Matale</option>
+                            <option value="Nuwara Eliya">Nuwara Eliya</option>
+                            <option value="Galle">Galle</option>
+                            <option value="Matara">Matara</option>
+                            <option value="Hambantota">Hambantota</option>
+                            <option value="Jaffna">Jaffna</option>
+                            <option value="Kilinochchi">Kilinochchi</option>
+                            <option value="Mannar">Mannar</option>
+                            <option value="Vavuniya">Vavuniya</option>
+                            <option value="Mullaitivu">Mullaitivu</option>
+                            <option value="Batticaloa">Batticaloa</option>
+                            <option value="Ampara">Ampara</option>
+                            <option value="Trincomalee">Trincomalee</option>
+                            <option value="Kurunegala">Kurunegala</option>
+                            <option value="Puttalam">Puttalam</option>
+                            <option value="Anuradhapura">Anuradhapura</option>
+                            <option value="Polonnaruwa">Polonnaruwa</option>
+                            <option value="Badulla">Badulla</option>
+                            <option value="Monaragala">Monaragala</option>
+                            <option value="Ratnapura">Ratnapura</option>
+                            <option value="Kegalle">Kegalle</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="doctorMobile" class="form-label">Mobile</label>
+                            <input type="number" class="form-control" id="doctorMobile" placeholder="Mobile">
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="doctorAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="doctorAddress" placeholder="Address">
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="doctorAvailability" class="form-label">Availability</label>
+                        <select id="doctorAvailability" class="form-select">
+                            <option value="available">Available</option>
+                            <option value="not available" selected>Not Available</option>
+                        </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="completeForm">
+                            <label class="form-check-label" for="completeForm">
+                                Confirm
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" onclick="createDoctor()">Add Doctor</button>
+                        <button class="btn btn-secondary" onclick="updateDoctorRecords()">Update Doctor</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-8 search-doctor">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search Doctors By Name" onkeyup="searchDoctor()">
+                </div>
+                <div class="table-outer">
+                    <table class="table table-hover" >
+                        <thead>
+                        <tr>
+                            <!--                                <th scope="col">#</th>-->
+                            <th scope="col">Name</th>
+                            <th scope="col">Speciality</th>
+                            <th scope="col">Province</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Availability</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="../../../js/firebase_configure.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../../js/doctor/doctor.js"></script>
+<script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+</body>
+</html>
