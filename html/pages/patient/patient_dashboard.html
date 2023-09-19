@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
     <title>Patient Dashboard</title>
     <link rel="stylesheet" href="../../../css/patient/patient_dashboard.css">
+    <link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body onload="loadAllPatients()">
 
 <div class="patient-dashboard-outer">
     <div class="patient-dashboard-inner">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-lg-8 inner-items inner-items-left">
                     <div class="row">
@@ -35,7 +38,7 @@
                         <table class="table" >
                             <thead>
                             <tr>
-<!--                                <th scope="col">#</th>-->
+                                <th scope="col">Patient Id</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Age</th>
                                 <th scope="col">Gender</th>
@@ -54,6 +57,10 @@
                     <div class="form-outer">
                         <form class="row g-3 border p-2 rounded" id="patientForm">
                             <h1>Manage Patients</h1>
+                            <div class="col-md-12">
+                                <label for="patientId" class="form-label">Patient Id</label>
+                                <input disabled type="text" class="form-control" id="patientId" placeholder="Patient Id">
+                            </div>
                             <div class="col-md-10">
                                 <label for="name" class="form-label">Name</label>
                                 <input required type="text" class="form-control" id="name" placeholder="Tasheela">

@@ -1,16 +1,35 @@
 
 
-let customerId;
+let patientId;
+const patientIdPrefix = "PID-";
+
+function generatePatientId(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomId += characters.charAt(randomIndex);
+    }
+    return randomId;
+}
+
+
 const createPatient = () => {
 
-    // Check if the confirmation checkbox is checked
+    const patientId = patientIdPrefix + generatePatientId(6);
+
+    $('#patientId').val(patientId);
+
+
     const confirmed = document.getElementById('completeForm');
     if (!confirmed.checked) {
         alert('Please confirm before creating a patient.');
         return;
     }
 
+
     const patient = {
+        userId: patientId,
         name: $('#name').val(),
         age: $('#age').val(),
         gender: $('#gender').val(),
@@ -24,7 +43,8 @@ const createPatient = () => {
     const database = firebase.firestore();
     database
         .collection('patient')
-        .add(patient)
+        .doc(patientId)
+        .set(patient)
         .then((response) => {
             console.log(response)
         })
@@ -49,6 +69,7 @@ const loadAllPatients = () => {
                 const patientData = patientRecords.data();
                 const row = `
                     <tr>
+                        <td>${patientData.userId}</td>
                         <td>${patientData.name}</td>
                         <td>${patientData.age}</td>
                         <td>${patientData.gender}</td>
@@ -56,10 +77,10 @@ const loadAllPatients = () => {
                         <td>${patientData.address}</td>
                         <td>${patientData.medicalHistory}</td>
                         <td>
-                            <button class="btn btn-primary w-100" onclick="updatePatient('${patientRecords.id}')">Update</button>
+                            <button class="btn btn-primary w-100" onclick="updatePatient('${patientRecords.id}')"><i class="fa-solid fa-pen-to-square"></i></button>
                         </td>
                         <td>
-                            <button class="btn btn-danger w-100" onclick="deletePatient('${patientRecords.id}')">Delete</button>
+                            <button class="btn btn-danger w-100" onclick="deletePatient('${patientRecords.id}')"><i class="fa-solid fa-trash-can"></i></button>
                         </td>
                     </tr>
                 `;
@@ -72,14 +93,15 @@ const loadAllPatients = () => {
 }
 
 const updatePatient = (id) => {
-    customerId = id;
+    patientId = id;
     const firestore = firebase.firestore();
     firestore.collection('patient')
-        .doc(customerId)
+        .doc(patientId)
         .get()
         .then((res) => {
             if (res.exists) {
                 const data = res.data();
+                $('#patientId').val(data.userId);
                 $('#name').val(data.name);
                 $('#age').val(data.age);
                 $('#gender').val(data.gender);
@@ -96,11 +118,12 @@ const updatePatient = (id) => {
 }
 
 const updatePatientRecords = () => {
-    if (customerId) {
+    if (patientId) {
         const firestore = firebase.firestore();
         firestore.collection('patient')
-            .doc(customerId)
+            .doc(patientId)
             .update({
+                userId: $('#patientId').val(),
                 name: $('#name').val(),
                 age: $('#age').val(),
                 gender: $('#gender').val(),
@@ -109,7 +132,7 @@ const updatePatientRecords = () => {
                 medicalHistory: $('#medicalHistory').val()
             })
             .then(() => {
-                customerId = undefined;
+                patientId = undefined;
                 loadAllPatients();
             })
             .catch((err) => {
@@ -126,7 +149,7 @@ const deletePatient = (id) => {
             .delete()
             .then(() => {
                 alert("Deleted");
-                customerId = undefined;
+                patientId = undefined;
                 loadAllPatients();
             })
             .catch((err) => {
@@ -145,7 +168,6 @@ const searchPatient = () => {
             $('#table-body').empty(); // Clear existing rows
             response.forEach((patientRecords) => {
                 const patientData = patientRecords.data();
-
                 if (searchValue === '' || patientData.name.toLowerCase().includes(searchValue)) {
                     const row = `
                         <tr>

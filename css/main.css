@@ -1,0 +1,17 @@
+
+input.form-control,.form-select{
+    border-radius: 0!important;
+    background-color: transparent!important;
+    height: 50px;
+
+}
+textarea.form-control{
+    border-radius: 0!important;
+    background-color: transparent!important;
+}
+
+button{
+    height: 50px;
+    border: none;
+    border-radius:0!important;
+}

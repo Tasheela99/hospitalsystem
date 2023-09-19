@@ -1,4 +1,22 @@
+let appointments = [];
+const appointmentIdPrefix = "APT-"
+
+function generateAppointmentId(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let randomId = '';
+    for (let i = 0; i < length; i++) {
+        const randomIndex = Math.floor(Math.random() * characters.length);
+        randomId += characters.charAt(randomIndex);
+    }
+    return randomId;
+}
+
+
 const createAppointment = () => {
+
+    const appointmentId = appointmentIdPrefix + generateAppointmentId(6);
+
+
     const confirmed = document.getElementById('completeForm');
     if (!confirmed.checked) {
         toastr.error('Please Confirm Before Submitting', 'Error!');
@@ -8,22 +26,25 @@ const createAppointment = () => {
     }
 
     const appointment = {
-        name: $('#name').val(),
-        mobile: $('#mobile').val(),
+        appointmentId: appointmentId,
+        patientId: $('#patientId').val(),
+        patientName: $('#name').val(),
+        patientMobile: $('#mobile').val(),
+        patientMedicalHistory: $('#medicalHistory').val(),
         doctorName: $('#doctorName').val(),
         dateTime: $('#dateTime').val(),
         message: $('#message').val(),
     };
 
-    // Check for appointment conflicts
     checkAppointmentConflicts(appointment)
         .then(() => {
             const database = firebase.firestore();
-            const appointments = database.collection('appointment');
-            appointments
-                .add(appointment)
+            database
+                .collection('appointment')
+                .doc(appointmentId)
+                .set(appointment)
                 .then((response) => {
-                    toastr.success('Appointment SuccessFully','Success');
+                    toastr.success('Appointment SuccessFully', 'Success');
                     toastr.options.hideMethod = 'slideUp';
                     console.log(response);
                 })
@@ -72,6 +93,42 @@ const checkAppointmentConflicts = (appointment) => {
     });
 };
 
+
+const loadAllPatientIds = () => {
+    const firestore = firebase.firestore();
+    firestore
+        .collection('patient')
+        .get()
+        .then((response) => {
+            $('#patientId').empty();
+            response.forEach((patientRecords) => {
+                const option = $('<option></option>').val(patientRecords.id).text(patientRecords.id);
+                $('#patientId').append(option);
+            });
+        })
+        .catch((err) => {
+            console.log("Error loading patients:", err);
+        });
+}
+
+
+$('#patientId').on("change", function () {
+    const patientId = $(this).val();
+    const firestore = firebase.firestore();
+    firestore.collection('patient')
+        .doc(patientId)
+        .get()
+        .then((res) => {
+            if (res.exists) {
+                const data = res.data();
+                $('#name').val(data.name);
+                $('#mobile').val(data.mobile);
+                $('#medicalHistory').val(data.medicalHistory);
+            }
+        });
+});
+
+
 const loadAllDoctors = () => {
     const firestore = firebase.firestore();
     firestore
@@ -91,6 +148,9 @@ const loadAllDoctors = () => {
             console.log("Error loading patients:", err);
         });
 }
+
+
 window.onload = () => {
     loadAllDoctors();
+    loadAllPatientIds();
 }
