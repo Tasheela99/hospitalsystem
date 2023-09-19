@@ -1,17 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@500&display=swap');
 
-input.form-control,.form-select{
-    border-radius: 0!important;
-    background-color: transparent!important;
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    height: auto;
+    background-color: rgba(39, 110, 245, 0.8);
+    padding: 20px 0;
+}
+
+.nav-link {
+    color: white;
+}
+
+input.form-control, .form-select {
+    border-radius: 0 !important;
+    background-color: transparent !important;
     height: 50px;
 
 }
-textarea.form-control{
-    border-radius: 0!important;
-    background-color: transparent!important;
+
+textarea.form-control {
+    border-radius: 0 !important;
+    background-color: transparent !important;
 }
 
-button{
+button {
     height: 50px;
     border: none;
-    border-radius:0!important;
+    border-radius: 0 !important;
 }
+
+
+.image {
+    width: 100%;
+    height: 580px;
+    background-image: url("https://img.freepik.com/free-vector/flat-hand-drawn-hospital-reception-scene_52683-54613.jpg?w=1380&t=st=1695114006~exp=1695114606~hmac=a44b0458e07c0662b374ae09152e03c27e2010570c3476616754d8363980946f");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.service-row-outer {
+    width: 100%;
+    height: auto;
+
+}
+
+.service-row-inner {
+    width: 100%;
+    height: 200px;
+    background-image: url("https://img.freepik.com/free-vector/smart-healthcare-technology-template-vector_53876-110859.jpg?w=1480&t=st=1695111402~exp=1695112002~hmac=7bb85aebf4af77587b56799ff02123ba8e657c615c0fc89fe004d3bb607d31e2");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.service-row-inner > .inner-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-divider {
+    height: 100px;
+    width: 100%;
+}
+
+.service-item-outer {
+    height: 200px;
+    padding: 10px;
+}
+
+.service-item-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.service-item-inner h3 {
+    text-align: center;
+}
+
+.user-management-outer {
+    width: 100%;
+    height: auto;
+}
+
+.user-management-inner {
+    width: 100%;
+}
+
+.user-management-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/dashboard-concept-illustration_114360-1447.jpg?w=826&t=st=1695108261~exp=1695108861~hmac=1eb5c14ec40839d41fc5809390b344fc2c0ae1dcbf65d000e44115c34d5589a4");
+}
+
+
+.patient-management-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/family-with-baby-visiting-doctor_1262-19778.jpg?w=996&t=st=1695108757~exp=1695109357~hmac=e54a4644238a4700aad9fc2aa94115d804e3a520b66e6aa4996b4800a38756a1");
+
+}
+
+.doctor-management-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/blood-research-concept-illustration_114360-19663.jpg?w=826&t=st=1695110482~exp=1695111082~hmac=8e0b75ba04ab645cd29971c97017bff8499e8700f7c7c23726fb92fb5441fed6");
+}
+
+.appointment-management-image{
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/appointment-booking-with-calendar-concept_23-2148556783.jpg?w=826&t=st=1695134240~exp=1695134840~hmac=c90e1387c13a61d2cf4e8e11cd0fd14520094478151eb2b9c415ba57f04121bf");
+}
+
+.medicine-inventory-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/humanitarian-help-people-donating-sanitary-protection-equipment-concept-illustration_114360-1775.jpg?w=826&t=st=1695109049~exp=1695109649~hmac=535baec08a45f45b2ddcc406ccf60c815fbd0a7cedc7f9f91ac45ea2bac67eb1");
+
+}
+
+.billing-management-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/paying-bills-concept-illustration_114360-16058.jpg?w=826&t=st=1695112704~exp=1695113304~hmac=abc6ce61782a93aba1611edc885aba785fa34c07ed0780f00a0c6a2c34340054");
+}
+
+
+.description {
+    padding: 20px 10px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    order: inherit;
+}
+
+.description > p {
+    line-height: 30px;
+}
+
+
+.footer-outer{
+    width: 100%;
+    height: auto;
+}
+
+.footer-inner{
+    width: 100%;
+    padding: 20px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-inner p{
+    color: white;
+    margin: 0;
+}
+
+
+
+@media (max-width: 576px) {
+    .user-management-image, .patient-management-image, .doctor-management-image, .medicine-inventory-image, .billing-management-image, .image {
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .description {
+        order: 1;
+    }
+
+
+    .navbar {
+        position: sticky;
+        top: 0;
+        height: auto;
+        background-color: rgba(39, 110, 245, 0.9);
+    }
+
+    .navbar-brand {
+        font-size: 15px!important;
+        font-weight: 700;
+    }
+
+    .navbar-nav li:last-child {
+       border: none!important;
+        padding: 0!important;
+    }
+
+}
+
+

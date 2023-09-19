@@ -4,9 +4,255 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">Hospital Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#user">User</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#patient">Patient</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#doctor">Doctor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#medicine">Medicine Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#billing">Billing</a>
+                </li>
+
+                <li class="nav-item border px-5">
+                    <a class="nav-link " href="html/pages/user/login.html">Sign In</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="landing-image-outer" id="home">
+    <div class="landing-image-inner">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="services-outer" id="services">
+    <div class="services-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>User Management</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>Patient Management</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>Doctor Management</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>Appointment Management</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>Medicine Inventory Management</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 service-item-outer">
+                    <div class="service-item-inner">
+                        <h3>Billing Management</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="service-row-outer" id="join-section">
+    <div class="service-row-inner">
+        <div class="inner-items">
+            <h3>Join With Us</h3>
+            <button class="btn btn-outline-dark">SIGNIN</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="section-divider"></div>
+
+<div class="user-management-outer" id="user">
+    <div class="user-management-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 left">
+                    <div class="user-management-image"></div>
+                </div>
+                <div class="col-12 col-lg-6 right description">
+                    <h1>User Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+
+                    <button class="btn btn-outline-success"><a href="html/pages/user/login.html">User Management</a></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="patient-management-outer" id="patient">
+    <div class="patient-management-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 left description">
+                    <h1>Patient Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+                    <button class="btn btn-outline-primary"><a href="html/pages/patient/patient_dashboard.html"> Patient Management</a></button>
+
+
+                </div>
+                <div class="col-12 col-lg-6 right">
+                    <div class="patient-management-image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="doctor-management-outer" id="doctor">
+    <div class="doctor-management-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 left">
+                    <div class="doctor-management-image"></div>
+                </div>
+                <div class="col-12 col-lg-6 right description">
+                    <h1>Doctor Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+                    <button class="btn btn-outline-warning"><a href="html/pages/doctor/doctor_dashboard.html">Doctor Management</a> </button>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="doctor-management-outer" id="appointment">
+    <div class="doctor-management-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 right description">
+                    <h1>Appointment Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+                    <button class="btn btn-outline-warning"><a href="html/pages/doctor/doctor_dashboard.html">Doctor Management</a> </button>
+                </div>
+                <div class="col-12 col-lg-6 left">
+                    <div class="appointment-management-image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="medicine-inventory-outer" id="medicine">
+    <div class="medicine-inventory-inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 right">
+                    <div class="medicine-inventory-image"></div>
+                </div>
+                <div class="col-12 col-lg-6 left description">
+                    <h1>Medicine Inventory Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+                    <button class="btn btn-outline-info"><a href="html/pages/"></a>Medicine Inventory Management</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="billing-management-outer" id="billing">
+    <div class="billing-management-inner">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-lg-6 right description">
+                    <h1>Billing Management</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem facere fuga ipsam quae, quasi
+                        quis quisquam temporibus ullam velit? Ab amet dicta distinctio dolorem dolores doloribus ea ex,
+                        fugit id ipsum officia quaerat ratione repellat sapiente sequi temporibus ut voluptatum.</p>
+                    <button class="btn btn-outline-warning">Billing & Invoice Management</button>
+                </div>
+                <div class="col-12 col-lg-6 left">
+                    <div class="billing-management-image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+<div class="footer-outer">
+    <div class="footer-inner">
+        <p>&copy;2023 Copyright : Tasheela Jayawickrama</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
 </body>
 </html>
