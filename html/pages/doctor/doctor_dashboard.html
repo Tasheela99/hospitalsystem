@@ -5,20 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <title>Patient Dashboard</title>
+    <title>Doctors</title>
     <link rel="stylesheet" href="../../../css/doctor/doctor_dashboard.css">
     <link rel="stylesheet" href="../../../css/main.css">
 </head>
 <body>
+<div class="nav-area">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">HMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../pages/user/dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/patient/patient_dashboard.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/doctor/doctor_dashboard.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/appointments/appointment_dashboard.html">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/medicine_inventory/medicine_inventory.html">Medicine Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Billing & Invoice</a>
+                    </li>
+                </ul>
 
+            </div>
+        </div>
+    </nav>
+</div>
 <div class="doctor-dashboard-outer">
     <div class="doctor-dashboard-inner">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Manage Doctors</h1>
-                </div>
+        <div class="doctor-dashboard-image-outer">
+            <div class="doctor-dashboard-image-inner">
+                <h1 class="image-overlay-text">Doctor Management</h1>
             </div>
+        </div>
+        <div class="section-divider"></div>
+        <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <img src="../../../assets/images/doctor.jpg" alt="Doctor Image" width="100%">
@@ -230,5 +263,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="../../../js/doctor/doctor.js"></script>
 <script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+
 </body>
 </html>

@@ -3,6 +3,26 @@
 *{
     font-family: 'Roboto', sans-serif;
 }
+
+.doctor-dashboard-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.doctor-dashboard-image-inner{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-vector/plastic-surgeon-operating-patient-surgery-room_33099-2120.jpg?w=1380&t=st=1695235717~exp=1695236317~hmac=ece11a0401ad9228defa77991d73d628c30aaf06610d652d8bb37a6eefcaf165");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider{
+    height: 100px;
+    width: 100%;
+}
 .doctor-form{
     border: 1px solid lightgray;
     padding: 20px 30px;

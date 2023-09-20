@@ -12,7 +12,6 @@
     background-color: rgba(39, 110, 245, 0.8);
     padding: 20px 0;
 }
-
 .nav-link {
     color: white;
 }
@@ -35,6 +34,12 @@ button {
     border-radius: 0 !important;
 }
 
+.table-outer {
+    height: auto;
+    overflow-x: scroll;
+    scrollbar-width: auto;
+    max-height: 500px;
+}
 
 .image {
     width: 100%;
@@ -43,6 +48,12 @@ button {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
+}
+
+.image-overlay-text{
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .service-row-outer {

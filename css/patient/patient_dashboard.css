@@ -15,6 +15,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.patient-dashboard-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.patient-dashboard-image-inner{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-vector/cartoon-stomatology-room-with-equipment-furniture-vector-illustration-dentist-office-chair-medical-tools-toothache-treatment-instruments-desktop-computer-folders-shelf-medical-practice_107791-21199.jpg?w=1380&t=st=1695236347~exp=1695236947~hmac=be65a4c9af1f04bad3c3be3f0733f5c18a20279acc880defeaca66637e0fb26b");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider{
+    height: 100px;
+    width: 100%;
 }
 
 .fa-hospital-user{

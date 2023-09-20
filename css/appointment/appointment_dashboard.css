@@ -1,0 +1,19 @@
+.appointment-dashboard-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.appointment-dashboard-image-inner{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-vector/job-search-composition-with-indoor-scenery-character-female-applicant-sitting-front-employers-illustration_1284-65483.jpg?w=1380&t=st=1695235441~exp=1695236041~hmac=e3672991d0aae440a70b4352c74488afb03b0f6632d3b955b7e3da634f046619");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-divider{
+    height: 100px;
+    width: 100%;
+}
