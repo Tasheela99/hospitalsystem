@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+    <title>Medicine Inventory</title>
+    <link rel="stylesheet" href="../../../css/medicine/medicine_inventory.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+</head>
+<body onload="loadAllMedicines()">
+<div class="nav-area">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">HMS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../../pages/user/dashboard.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/patient/patient_dashboard.html">Patients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/doctor/doctor_dashboard.html">Doctors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/appointments/appointment_dashboard.html">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/medicine_inventory/medicine_inventory.html">Medicine Inventory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Billing & Invoice</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="medicine-inventory-outer">
+    <div class="medicine-inventory-inner">
+        <div class="medicine-inventory-image-outer">
+            <div class="medicine-inventory-image-inner">
+                <h1 class="image-overlay-text">Medicine Inventory Management</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row medicine-manager-row">
+                <div class="col-12 col-lg-4">
+                    <div class="my-3">
+                        <input type="text" class="form-control" id="medicineName" placeholder="Name">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="my-3">
+                        <input type="number" class="form-control" id="medicineQuantity" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="my-3">
+                        <input type="number" class="form-control" id="medicinePrice" placeholder="Price">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="my-3">
+                        <input type="datetime-local" class="form-control" id="expireDate">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="my-3">
+                        <button class="w-100 btn btn-primary" onclick="createMedicine()">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="my-3">
+                        <input type="text" class="form-control" id="searchInput"
+                               placeholder="Search Medicine By Name" onkeyup="searchMedicine()">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-outer">
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th scope="col">Medicine Id</th>
+                            <th scope="col">Medicine Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Expire Date</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="../../../js/firebase_configure.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../../js/medicine/medicine_inventory.js"></script>
+<script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+</body>
+</html>

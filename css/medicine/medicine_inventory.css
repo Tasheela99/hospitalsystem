@@ -1,0 +1,20 @@
+.medicine-inventory-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.medicine-inventory-image-inner{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-vector/pharmacy-interior-flat-background-with-visitors-pharmacist-staff-white-coats-consulting-people-vector-illustration_1284-72274.jpg?w=1380&t=st=1695229221~exp=1695229821~hmac=64a8c8643073bbfd5972c6f9ad4bb40e7adabd490b5c068bd7c1e39d9aec29e1");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medicine-manager-row{
+    border: 1px solid lightgray;
+    margin: 20px 0;
+    padding: 20px 0;
+}
