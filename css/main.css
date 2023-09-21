@@ -34,6 +34,11 @@ button {
     border-radius: 0 !important;
 }
 
+.description button a{
+    text-decoration: none;
+    color: black;
+}
+
 .table-outer {
     height: auto;
     overflow-x: scroll;
@@ -54,6 +59,7 @@ button {
     color: white;
     font-weight: 900;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .service-row-outer {
@@ -204,7 +210,7 @@ button {
 
 
 @media (max-width: 576px) {
-    .user-management-image, .patient-management-image, .doctor-management-image, .medicine-inventory-image, .billing-management-image, .image {
+    .user-management-image, .patient-management-image, .doctor-management-image, .medicine-inventory-image, .billing-management-image, .image, .appointment-management-image {
         height: 300px;
         display: flex;
         align-items: center;
