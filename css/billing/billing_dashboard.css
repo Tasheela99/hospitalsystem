@@ -1,0 +1,33 @@
+.billing-dashboard-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.billing-dashboard-image-outer{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-vector/tax-pay-flat-composition-with-people-filling-taxing-form-vector-illustration_98292-8654.jpg?w=1060&t=st=1695288325~exp=1695288925~hmac=311e6a97d1afe87fe68f5b2c08f12544282cfa569f0f76257847f5e3dd2f4aac");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.medicine-manager-row{
+    border: 1px solid lightgray;
+    margin: 20px 0;
+    padding: 20px 0;
+}
+
+
+.patient-data-row{
+    border: 1px solid lightgray;
+    height: auto;
+    padding: 20px 0;
+}
+
+.medicine-data-row{
+    border: 1px solid lightgray;
+    height: auto;
+    padding: 20px 0;
+}
