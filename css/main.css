@@ -34,9 +34,15 @@ button {
     border-radius: 0 !important;
 }
 
+
+
 .description button a{
     text-decoration: none;
     color: black;
+    cursor: pointer;
+}
+.description button:hover a{
+    color: white!important;
 }
 
 .table-outer {
@@ -207,10 +213,23 @@ button {
     margin: 0;
 }
 
+input:disabled {
+    background-color: lightgray!important;
+}
+textarea:disabled {
+    background-color: lightgray!important;
+}
+
 
 
 @media (max-width: 576px) {
-    .user-management-image, .patient-management-image, .doctor-management-image, .medicine-inventory-image, .billing-management-image, .image, .appointment-management-image {
+    .image,
+    .user-management-image,
+    .patient-management-image,
+    .doctor-management-image,
+    .medicine-inventory-image,
+    .billing-management-image,
+    .appointment-management-image {
         height: 300px;
         display: flex;
         align-items: center;
