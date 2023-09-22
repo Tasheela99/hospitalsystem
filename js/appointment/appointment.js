@@ -1,4 +1,3 @@
-let appointments = [];
 const appointmentIdPrefix = "APT-"
 
 function generateAppointmentId(length) {
@@ -88,7 +87,8 @@ const checkAppointmentConflicts = (appointment) => {
                 }
             })
             .catch((err) => {
-                reject('Error loading appointments:', err);
+                toastr.error('Select Another Time to Your Appointment', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
             });
     });
 };

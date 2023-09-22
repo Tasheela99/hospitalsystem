@@ -15,7 +15,9 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="../../../index.html">HMS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -33,7 +35,8 @@
                         <a class="nav-link" href="../../pages/appointments/appointment_dashboard.html">Appointments</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../../pages/medicine_inventory/medicine_inventory.html">Medicine Inventory</a>
+                        <a class="nav-link" href="../../pages/medicine_inventory/medicine_inventory.html">Medicine
+                            Inventory</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/billing/billing_dashboard.html">Billing & Invoice</a>
@@ -55,6 +58,10 @@
         <div class="section-divider"></div>
         <div class="container">
             <div class="row patient-data-row mb-3">
+                <div class="col-12">
+                    <h3>Patient Details</h3>
+                    <hr>
+                </div>
                 <div class="col-12 col-lg-3">
                     <label for="patientId" class="form-label">Patient Id</label>
                     <select id="patientId" class="form-select">
@@ -63,25 +70,29 @@
                 </div>
                 <div class="col-12 col-lg-3">
                     <div class="mb-3">
-                        <label for="patientName" class="form-label">Patient Name</label>
-                        <input disabled type="text" class="form-control" id="patientName">
+                        <label for="name" class="form-label">Patient Name</label>
+                        <input disabled type="text" class="form-control" id="name">
                     </div>
                 </div>
                 <div class="col-12 col-lg-3">
                     <div class="mb-3">
-                        <label for="patientMobile" class="form-label">Patient Mobile</label>
-                        <input disabled type="tel" class="form-control" id="patientMobile">
+                        <label for="mobile" class="form-label">Patient Mobile</label>
+                        <input disabled type="tel" class="form-control" id="mobile">
                     </div>
                 </div>
                 <div class="col-12 col-lg-3">
                     <div class="mb-3">
-                        <label for="patientAddress" class="form-label">Patient Address</label>
-                        <input disabled type="text" class="form-control" id="patientAddress">
+                        <label for="address" class="form-label">Patient Address</label>
+                        <input disabled type="text" class="form-control" id="address">
                     </div>
                 </div>
             </div>
 
             <div class="row medicine-data-row">
+                <div class="col-12">
+                    <h3>Medicine Details</h3>
+                    <hr>
+                </div>
                 <div class="col-12 col-lg-3 my-3">
                     <select id="medicineId" class="form-select">
 
@@ -104,7 +115,50 @@
                 </div>
                 <div class="col-12 col-lg-2">
                     <div class="my-3">
-                        <button class="btn btn-primary w-100">Add</button>
+                        <button class="btn btn-primary w-100" onclick="addMedicine()">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-outer">
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <!--                                <th scope="col">#</th>-->
+                                <th scope="col">Medicine Id</th>
+                                <th scope="col">Medicine Name</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody id="table-body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-4">
+                    <div class="my-3">
+                        <input disabled type="text" class="form-control" id="netTotal" value="Net Total : Rs.">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="my-3">
+                        <input disabled type="text" class="form-control" id="outStandingBalance"
+                               placeholder="Outstanding" value="OutStanding Rs.">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <div class="my-3">
+                        <input type="text" class="form-control" id="payments" placeholder="Payments">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-2">
+                    <div class="my-3">
+                        <button class="btn btn-primary w-100" onclick="addToBill()">Verify Payment</button>
                     </div>
                 </div>
             </div>
