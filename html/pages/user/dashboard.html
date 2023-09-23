@@ -6,6 +6,9 @@
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+
     <link rel="stylesheet" href="../../../css/user/dashboard.css">
     <link rel="stylesheet" href="../../../css/main.css">
 
@@ -36,7 +39,10 @@
                         <a class="nav-link" href="../../pages/medicine_inventory/medicine_inventory.html">Medicine Inventory</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Billing & Invoice</a>
+                        <a class="nav-link" href="../../pages/billing/billing_dashboard.html">Billing & Invoice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/reports/report_dashboard.html">Billing & Invoice</a>
                     </li>
                 </ul>
 
@@ -48,38 +54,55 @@
 <div class="dashboard-outer">
     <div class="dashboard-inner">
         <div class="container">
-            <div class="row inner-items">
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Manage Patients</h1>
+            <div class="row count-row">
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="all-items border">
+                        <div class="all-items-inner">
+                            <div><i class="fa-solid fa-hospital-user"></i></div>
+                            <div class="tot-patients">Total Patients <span id="patientCount"></span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Manage Doctors</h1>
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="all-items border">
+                        <div class="all-items-inner">
+                            <div><i class="fa-solid fa-user-doctor"></i></div>
+                            <div class="tot-patients">Total Doctors <span id="doctorCount"></span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Medicine Inventory</h1>
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="all-items border">
+                        <div class="all-items-inner">
+                            <div><i class="fa-solid fa-clipboard"></i></div>
+                            <div class="tot-patients">Total Appointments <span id="appointmentCount"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-6">
+                    <div class="all-items border">
+                        <div class="all-items-inner">
+                            <div><i class="fa-solid fa-syringe"></i></div>
+                            <div class="tot-patients">Total Medicines <span id="medicineCount"></span></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="row inner-items">
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Manage Patients</h1>
-                    </div>
+            <div class="row chart-row">
+                <div class="col-12 col-lg-8 chart-outer mb-3">
+                    <canvas id="myChart"></canvas>
                 </div>
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Manage Doctors</h1>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 dashboard-item">
-                    <div class="dashboard-item-inner">
-                        <h1>Medicine Inventory</h1>
-                    </div>
+                <div class="col-12 col-lg-4 navigation-outer">
+
+                    <ul>
+                        <li><a href="../../pages/patient/patient_dashboard.html">patients</a><i class="fa-solid fa-hospital-user"></i></li>
+                        <li><a href="../../pages/doctor/doctor_dashboard.html">doctors</a><i class="fa-solid fa-user-doctor"></i></li>
+                        <li><a href="../../pages/appointments/appointment_dashboard.html">appointments</a><i class="fa-solid fa-clipboard"></i></li>
+                        <li><a href="../../pages/medicine_inventory/medicine_inventory.html">medicines</a><i class="fa-solid fa-syringe"></i></li>
+                        <li><a href="../../pages/billing/billing_dashboard.html">billing & inventory</a><i class="fa-solid fa-warehouse"></i></li>
+                        <li><a href="../../pages/reports/report_dashboard.html">reports</a><i class="fa-solid fa-receipt"></i></li>
+                    </ul>
+
                 </div>
             </div>
         </div>
@@ -87,9 +110,13 @@
 </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-        crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="../../../js/firebase_configure.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../../js/user/dashboard.js"></script>
+<script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 
 </body>
