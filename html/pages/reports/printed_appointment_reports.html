@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+
+    <title>Appointment Report</title>
+    <link rel="stylesheet" href="../../../css/report/printed_appointment_reports.css">
+    <link rel="stylesheet" href="../../../css/main.css">
+</head>
+<body>
+
+<div class="printed-appointment-report-outer">
+    <div class="printed-appointment-report-inner">
+        <div class="container">
+            <div class="row report-inner">
+                <div class="col-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <h1> <span class="backToReports"><i class="fa-solid fa-circle-chevron-left" onclick="backToReports()"></i></span> Appointment Report</h1>
+                                <p id="date"></p>
+                                <hr>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 appointment-details">
+                                <p >Appointment Id : <span id="appointmentId"></span> </p>
+                                <p >Patient Id : <span id="patientId"></span> </p>
+                                <p >Patient Name : <span id="patientName"></span> </p>
+                                <p >Patient Mobile : <span id="patientMobile"></span> </p>
+                                <div class="mb-3">
+                                    <label for="patientMedicalHistory" class="form-label">Patient Medical History </label>
+                                    <textarea disabled class="form-control" id="patientMedicalHistory" rows="6"></textarea>
+                                </div>
+                                <p >Doctor Name: <span id="doctorName"></span> </p>
+                                <div class="mb-3">
+                                    <label for="patientMessage" class="form-label">Message </label>
+                                    <textarea disabled class="form-control" id="patientMessage" rows="6"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-12 printer ">
+                                <i class="fa-solid fa-print report-printer" onclick="printReport()"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="../../../js/firebase_configure.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../../../js/reports/printed_appointment_reports.js"></script>
+<script src="https://kit.fontawesome.com/4b5b83994b.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+.printed-patient-report-outer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.printed-patient-report-inner{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.report-inner{
+    padding: 50px 0;
+    width: 100%;
+    height: 90vh;
+    border: 2px solid black;
+}
+
+.patients-data{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    text-align: left;
+    flex-direction: column;
+}
+
+.patients-data p{
+    padding: 20px 0;
+    font-size: 20px;
+}
+
+
+

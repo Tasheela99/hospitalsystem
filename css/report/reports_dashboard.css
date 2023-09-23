@@ -1,0 +1,43 @@
+.report-dashboard-inner-items{
+    padding: 20px 10px;
+}
+
+.billing-table-outer,
+.patients-table-outer,
+.doctors-table-outer{
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: scroll!important;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 30px 0;
+
+}
+
+.report-dashboard-image-outer{
+    width: 100%;
+    height: auto;
+}
+
+.report-dashboard-image-inner{
+    width: 100%;
+    height: 500px;
+    background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url("https://img.freepik.com/free-photo/businesswoman-using-tablet-analysis-graph-company-finance-strategy-statistics-success-concept-planning-future-office-room_74952-1410.jpg?w=1380&t=st=1695446663~exp=1695447263~hmac=65ac1574d8d9c7411895e1e27f886b79340677b1ad11eebf4c21664ac808e51c");
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+}
+
+.fa-print{
+    font-size: 20px;
+    color: #5f27cd;
+}
+
+.fa-print:hover{
+    color: #341f97;
+    cursor: pointer;
+    transform: scale(1.2);
+}
