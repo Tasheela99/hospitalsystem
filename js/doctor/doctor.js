@@ -2,7 +2,8 @@ let doctorId;
 const createDoctor = () => {
     const confirmed = document.getElementById('completeForm');
     if (!confirmed.checked) {
-        alert('Please confirm before creating a doctor.');
+        toastr.warning('Please Select the Checkbox before Click The Button', 'Warning!');
+        toastr.options.hideMethod = 'slideUp';
         return;
     }
 
@@ -23,9 +24,13 @@ const createDoctor = () => {
         .collection('doctor')
         .add(doctor)
         .then((response) => {
+            toastr.success('Doctor Added SuccessFully', 'Success!');
+            toastr.options.hideMethod = 'slideUp';
             console.log(response)
         })
         .catch((err) => {
+            toastr.error('Error Adding doctor', 'Error!');
+            toastr.options.hideMethod = 'slideUp';
             console.log("Error creating doctor:", err);
         });
 }
@@ -54,11 +59,12 @@ const loadAllDoctors = () => {
                         <td>${doctorData.doctorAddress}</td>
                         <td>${doctorData.doctorAvailability}</td>
                         <td>
-                            <button class="btn btn-primary w-100" onclick="updateDoctor('${doctorRecords.id}')">Update</button>
+                            <i class="fa-solid fa-pen-to-square" onclick="updateDoctor('${doctorRecords.id}')"></i>
                         </td>
                         <td>
-                            <button class="btn btn-danger w-100" onclick="deleteDoctor('${doctorRecords.id}')">Delete</button>
+                            <i class="fa-solid fa-trash-can" onclick="deleteDoctor('${doctorRecords.id}')"></i>
                         </td>
+                       
                     </tr>
                 `;
                 $('#table-body').append(row);
@@ -108,16 +114,20 @@ const updateDoctorRecords = () => {
                 doctorAddress: $('#doctorAddress').val(),
                 doctorAvailability: $('#doctorAvailability').val(),
             })
-            .then(() => {
+            .then((response) => {
+                toastr.success('Doctor Updated SuccessFully', 'Success!');
+                toastr.options.hideMethod = 'slideUp';
                 doctorId = undefined;
+                console.log(response)
                 loadAllDoctors();
             })
             .catch((err) => {
-                console.log("Error updating doctor:", err);
+                toastr.error('Error Updating doctor', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
+                console.log("Error creating doctor:", err);
             });
     }
 }
-
 const deleteDoctor = (id) => {
     if (confirm('Are you sure?')) {
         const firestore = firebase.firestore();
@@ -125,12 +135,16 @@ const deleteDoctor = (id) => {
             .doc(id)
             .delete()
             .then(() => {
+                toastr.warning('Doctor Deleted', 'Warning!');
+                toastr.options.hideMethod = 'slideUp';
                 alert("Deleted");
                 doctorId = undefined;
                 loadAllDoctors();
             })
             .catch((err) => {
-                console.log("Error deleting doctor:", err);
+                toastr.error('Error Deleting Doctor', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
+                console.log("Error deleting Doctor:", err);
             });
     }
 }
@@ -157,11 +171,11 @@ const searchDoctor = () => {
                             <td>${doctorData.doctorAddress}</td>
                             <td>${doctorData.doctorAvailability}</td>
                             <td>
-                                <button class="btn btn-primary w-100" onclick="updateDoctor('${doctorRecords.id}')">Update</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger w-100" onclick="deleteDoctor('${doctorRecords.id}')">Delete</button>
-                            </td>
+                            <i class="fa-solid fa-pen-to-square" onclick="updateDoctor('${doctorRecords.id}')"></i>
+                        </td>
+                        <td>
+                            <i class="fa-solid fa-trash-can" onclick="deleteDoctor('${doctorRecords.id}')"></i>
+                        </td>
                         </tr>
                     `;
                     $('#table-body').append(row);

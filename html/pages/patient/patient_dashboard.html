@@ -40,6 +40,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/billing/billing_dashboard.html">Billing & Invoice</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/reports/report_dashboard.html">Reports</a>
+                    </li>
+
                 </ul>
 
             </div>
@@ -59,11 +63,27 @@
             <div class="row">
                 <div class="col-12 col-lg-8 inner-items inner-items-left">
                     <div class="row">
-                        <div class="col-12 col-lg-3">
+                        <div class="col-12 col-lg-3 col-md-4">
                             <div class="all-patients border">
                                 <div class="all-patients-inner">
                                     <div><i class="fa-solid fa-hospital-user"></i></div>
                                     <div class="tot-patients">Total Patients <span id="patientCount"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-4">
+                            <div class="all-patients border">
+                                <div class="all-patients-inner">
+                                    <div><i class="fa-solid fa-person"></i></div>
+                                    <div class="tot-patients">Male Patients <span id="malePatients"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-4">
+                            <div class="all-patients border">
+                                <div class="all-patients-inner">
+                                    <div><i class="fa-solid fa-person-dress"></i></div>
+                                    <div class="tot-patients">Female Patients <span id="femalePatients"></span></div>
                                 </div>
                             </div>
                         </div>
@@ -103,11 +123,11 @@
                             </div>
                             <div class="col-md-10">
                                 <label for="name" class="form-label">Name</label>
-                                <input required type="text" class="form-control" id="name" placeholder="Tasheela">
+                                <input required type="text" class="form-control" id="name" >
                             </div>
                             <div class="col-md-2">
                                 <label for="age" class="form-label">Age</label>
-                                <input required type="text" class="form-control" id="age" placeholder="25">
+                                <input required type="text" class="form-control" id="age" >
                             </div>
                             <div class="col-md-6">
                                 <label for="gender" class="form-label">Gender</label>
@@ -119,12 +139,12 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="mobile" class="form-label">Mobile</label>
-                                <input required type="tel" class="form-control" id="mobile" placeholder="076 1234567">
+                                <input required type="tel" class="form-control" id="mobile" >
                             </div>
                             <div class="col-12">
                                 <label for="address" class="form-label">Address </label>
                                 <input required type="text" class="form-control" id="address"
-                                       placeholder="Tenna Rd, Matale">
+                                       >
                             </div>
                             <div class="mb-3">
                                 <label for="medicalHistory" class="form-label">Medical History</label>
@@ -139,12 +159,12 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100" type="button" onclick="createPatient()" id="createButton">Create
+                                <button class="btn btn-add w-100 " type="button" onclick="createPatient()" id="createButton">Add
                                     Patient
                                 </button>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100" type="button" onclick="updatePatientRecords()" id="updateBtn">Update
+                                <button class="btn btn-update w-100" type="button" onclick="updatePatientRecords()" id="updateBtn">Update
                                     Patient
                                 </button>
                             </div>

@@ -1,3 +1,5 @@
+//import {loadAllIds} from "/js/utils/utils";
+
 let billingInfo = [];
 let netTotal = 0;
 const billIdPrefix = "BILL-"
@@ -11,6 +13,8 @@ function generateBillId(length) {
     }
     return randomId;
 }
+
+//loadAllIds("patient","#patient")
 
 
 const loadAllPatientIds = () => {
@@ -26,8 +30,9 @@ const loadAllPatientIds = () => {
             });
         })
         .catch((err) => {
-            console.log("Error loading patients:", err);
-        });
+                console.log("Error loading patients:", err);
+            }
+        );
 }
 const loadAllMedicineIds = () => {
     const firestore = firebase.firestore();
@@ -77,6 +82,8 @@ $('#medicineId').on("change", function () {
 
 
 const addMedicine = () => {
+
+
     const unitPrice = $('#medicinePrice').val();
     const medicineUnitPrice = Number.parseFloat(unitPrice).toFixed(2);
     const buyingQty = $('#medicineQuantity').val();
@@ -138,6 +145,7 @@ const addToBill = () => {
     const patientId = $('#patientId').val();
     const firestore = firebase.firestore();
     let obj = {
+        billId: billId,
         patient: {
             patientId: patientId,
             name: $('#name').val(),
@@ -147,6 +155,7 @@ const addToBill = () => {
         billingDate: new Date().toISOString().split('T')[0],
         netTotal: Number.parseInt($('#netTotal').val()),
         outStandingBalance: Number.parseInt($('#outStandingBalance').val()),
+        payment:Number.parseInt($('#payments').val()),
         medicines: []
     }
     billingInfo.forEach(data => {

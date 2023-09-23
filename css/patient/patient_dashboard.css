@@ -38,7 +38,7 @@
     width: 100%;
 }
 
-.fa-hospital-user{
+.fa-hospital-user, .fa-person, .fa-person-dress{
     font-size: 30px;
 }
 
@@ -72,8 +72,14 @@
     padding: 5px 10px;
 }
 
+
 .inner-items-right{
 
+}
+
+#patientCount, #malePatients, #femalePatients{
+    font-size: 30px;
+    font-weight: 900;
 }
 
 @media (max-width: 998px) {

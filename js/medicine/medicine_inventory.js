@@ -14,8 +14,6 @@ function generateMedicineId(length) {
 
 const createMedicine = () => {
 
-
-
     const medicineName = $('#medicineName').val();
     const medicineQuantity = parseFloat($('#medicineQuantity').val());
     const medicinePrice = parseFloat($('#medicinePrice').val());
@@ -23,10 +21,10 @@ const createMedicine = () => {
     const expireDateValue = expireDateInput.value.split('T')[0];
 
     if (isNaN(medicineQuantity) || medicineQuantity < 0) {
-        toastr.error('Invalid quantity. Quantity must be a non-negative number.', 'Error');
+        toastr.error('Invalid quantity. Quantity is Negative Or Empty, Please Enter Valid Quantity.', 'Error');
         return;
     }else if (isNaN(medicinePrice) || medicinePrice < 0){
-        toastr.error('Invalid Price. Price must be a non-negative number.', 'Error');
+        toastr.error('Enter the Price. Price is Negative or Empty, Please Enter Valid Price.', 'Error');
         return;
     }
 
@@ -48,11 +46,13 @@ const createMedicine = () => {
         .doc(medicineId)
         .set(medicine)
         .then((response) => {
-            toastr.success('Medicine Added SuccessFully', 'Success');
+            toastr.success('Medicine Added SuccessFully', 'Success!');
             toastr.options.hideMethod = 'slideUp';
             console.log(response)
         })
         .catch((err) => {
+            toastr.error('Error Adding Medicine', 'Error!');
+            toastr.options.hideMethod = 'slideUp';
             console.log("Error creating medicine:", err);
         });
 
@@ -93,10 +93,14 @@ const updateMedicineRecords = () => {
                 expireDate: $('#expireDate').val(),
             })
             .then(() => {
+                toastr.success('Medicine Data Updated SuccessFully', 'Success!');
+                toastr.options.hideMethod = 'slideUp';
                 medicineId = undefined;
                 loadAllMedicines();
             })
             .catch((err) => {
+                toastr.error('Error Updating Medicine Data', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
                 console.log("Error updating medicine:", err);
             });
     }
@@ -139,12 +143,11 @@ const searchMedicine = () => {
                             <td>${medicineData.medicineQuantity}</td>
                             <td>${medicineData.medicinePrice}</td>
                             <td>${medicineData.expireDate}</td>
+                           
                             <td>
-                                <button class="btn btn-primary w-100" onclick="updateMedicine('${medicineRecords.id}')">Update</button>
+                                <i class="fa-solid fa-trash-can" onclick="deleteMedicine('${medicineRecords.id}')"></i>
                             </td>
-                            <td>
-                                <button class="btn btn-danger w-100" onclick="deleteMedicine('${medicineRecords.id}')">Delete</button>
-                            </td>
+                  
                         </tr>
                     `;
                     $('#table-body').append(row);
@@ -172,13 +175,10 @@ const loadAllMedicines = () => {
                         <td>${medicineData.medicineQuantity}</td>
                         <td>${medicineData.medicinePrice}</td>
                         <td>${medicineData.expireDate}</td>
-                       
-                        <td>
-                            <button class="btn btn-primary w-100" onclick="updateMedicine('${medicineRecords.id}')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        </td>
-                        <td>
-                            <button class="btn btn-danger w-100" onclick="deleteMedicine('${medicineRecords.id}')"><i class="fa-solid fa-trash-can"></i></button>
-                        </td>
+     
+                            <td>
+                                <i class="fa-solid fa-trash-can" onclick="deleteMedicine('${medicineRecords.id}')"></i>
+                            </td>
                     </tr>
                 `;
                 $('#table-body').append(row);

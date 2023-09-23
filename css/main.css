@@ -9,7 +9,7 @@
     position: sticky;
     top: 0;
     height: auto;
-    background-color: rgba(39, 110, 245, 0.8);
+    background-color: rgba(72, 219, 251,0.9);
     padding: 20px 0;
 }
 .nav-link {
@@ -101,7 +101,7 @@ button {
 
 .service-item-outer {
     height: 200px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .service-item-inner {
@@ -110,10 +110,35 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     border: 1px solid black;
     padding: 20px;
     border-radius: 5px;
 }
+.service-item-inner .fa-solid{
+    font-size: 40px;
+    border: 3px solid white;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+@media (min-width: 998px) {
+    .service-item-inner{
+        position: relative;
+    }
+
+    .service-item-inner .fa-solid{
+       position: absolute;
+        left: 20px;
+        top: -35px;
+    }
+}
+
 
 .service-item-inner h3 {
     text-align: center;
@@ -179,6 +204,14 @@ button {
     background-image: url("https://img.freepik.com/free-vector/paying-bills-concept-illustration_114360-16058.jpg?w=826&t=st=1695112704~exp=1695113304~hmac=abc6ce61782a93aba1611edc885aba785fa34c07ed0780f00a0c6a2c34340054");
 }
 
+.report-management-image {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("https://img.freepik.com/free-vector/performance-overview-concept-illustration_114360-5246.jpg?w=826&t=st=1695447304~exp=1695447904~hmac=570f5884fc9d05bc9a1b573b256c1feb2518745b0a714be16f16e48e07f33574");
+}
+
 
 .description {
     padding: 20px 10px;
@@ -221,6 +254,61 @@ textarea:disabled {
 }
 
 
+.btn-add{
+    color: white;
+    background-color: #48dbfb;
+}
+.btn-add:hover{
+    color: white;
+    background-color: #0abde3;
+}
+.btn-update{
+    color: white;
+    background-color: #1dd1a1;
+}
+.btn-update:hover{
+    color: white;
+    background-color: #10ac84;
+}
+
+.fa-trash-can{
+    color: #ff6b6b;
+}
+.fa-trash-can:hover{
+    color: #ee5253;
+    cursor: pointer;
+}
+.fa-pen-to-square{
+    color: #feca57;
+}
+.fa-pen-to-square:hover{
+    color: #ff9f43;
+    cursor: pointer;
+}
+
+
+.printer{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.report-printer{
+    font-size: 50px;
+    border: 3px solid #5f27cd;
+    padding: 20px;
+    border-radius: 50%;
+    color: #5f27cd;
+    cursor: pointer;
+}
+
+.fa-circle-chevron-left{
+    cursor: pointer;
+}
+
+
+
 
 @media (max-width: 576px) {
     .image,
@@ -229,7 +317,8 @@ textarea:disabled {
     .doctor-management-image,
     .medicine-inventory-image,
     .billing-management-image,
-    .appointment-management-image {
+    .appointment-management-image,
+    .report-management-image{
         height: 300px;
         display: flex;
         align-items: center;

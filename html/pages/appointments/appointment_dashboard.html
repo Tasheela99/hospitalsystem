@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../../pages/billing/billing_dashboard.html">Billing & Invoice</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../pages/reports/report_dashboard.html">Reports</a>
+                    </li>
                 </ul>
 
             </div>
@@ -68,14 +71,14 @@
                         <div class="col-12 col-lg-8">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Patient Name</label>
-                                <input disabled type="text" class="form-control" id="name" placeholder="Name">
+                                <input disabled type="text" class="form-control" id="name">
                             </div>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="mb-3">
                             <label for="mobile" class="form-label">Patient Mobile</label>
-                            <input disabled type="tel" class="form-control" id="mobile" placeholder="076xxxxxxx">
+                            <input disabled type="tel" class="form-control" id="mobile">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -109,11 +112,9 @@
                             </label>
                         </div>
                     </div>
+
                     <div class="col-12 mb-3">
-                        <button class="btn btn-primary w-100" onclick="createAppointment()">Make Appointment</button>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-danger w-100" type="reset">Cancel Appointment</button>
+                        <button class="btn btn-add w-100" onclick="createAppointment()">Make Appointment</button>
                     </div>
                 </div>
 

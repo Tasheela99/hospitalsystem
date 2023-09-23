@@ -1,5 +1,4 @@
 
-
 let patientId;
 const patientIdPrefix = "PID-";
 
@@ -23,7 +22,8 @@ const createPatient = () => {
 
     const confirmed = document.getElementById('completeForm');
     if (!confirmed.checked) {
-        alert('Please confirm before creating a patient.');
+        toastr.warning('Please Select the Checkbox before Click The Button', 'Warning!');
+        toastr.options.hideMethod = 'slideUp';
         return;
     }
 
@@ -46,9 +46,13 @@ const createPatient = () => {
         .doc(patientId)
         .set(patient)
         .then((response) => {
+            toastr.success('Patient Added SuccessFully', 'Success!');
+            toastr.options.hideMethod = 'slideUp';
             console.log(response)
         })
         .catch((err) => {
+            toastr.error('Error Adding patient', 'Error!');
+            toastr.options.hideMethod = 'slideUp';
             console.log("Error creating patient:", err);
         });
 }
@@ -56,8 +60,20 @@ const createPatient = () => {
 const totalPatientCount = (count) => {
     $('#patientCount').text(count);
 }
+const totalMalePatientsCount = (count)=>{
+    $('#malePatients').text(count);
+}
+const totalFeMalePatientsCount = (count)=>{
+    $('#femalePatients').text(count);
+}
+
 const loadAllPatients = () => {
     const firestore = firebase.firestore();
+
+    let malePatientCount = 0;
+    let femalePatientCount = 0;
+
+
     firestore
         .collection('patient')
         .get()
@@ -67,6 +83,13 @@ const loadAllPatients = () => {
             $('#table-body').empty();
             response.forEach((patientRecords) => {
                 const patientData = patientRecords.data();
+                if (patientData.gender === 'male') {
+                    malePatientCount++;
+                } else if (patientData.gender === 'female') {
+                    femalePatientCount++;
+                }
+                totalMalePatientsCount(malePatientCount);
+                totalFeMalePatientsCount(femalePatientCount);
                 const row = `
                     <tr>
                         <td>${patientData.userId}</td>
@@ -77,10 +100,10 @@ const loadAllPatients = () => {
                         <td>${patientData.address}</td>
                         <td>${patientData.medicalHistory}</td>
                         <td>
-                            <button class="btn btn-primary w-100" onclick="updatePatient('${patientRecords.id}')"><i class="fa-solid fa-pen-to-square"></i></button>
+                            <i class="fa-solid fa-pen-to-square" onclick="updatePatient('${patientRecords.id}')"></i>
                         </td>
                         <td>
-                            <button class="btn btn-danger w-100" onclick="deletePatient('${patientRecords.id}')"><i class="fa-solid fa-trash-can"></i></button>
+                           <i class="fa-solid fa-trash-can" onclick="deletePatient('${patientRecords.id}')"></i>
                         </td>
                     </tr>
                 `;
@@ -132,10 +155,14 @@ const updatePatientRecords = () => {
                 medicalHistory: $('#medicalHistory').val()
             })
             .then(() => {
+                toastr.success('Patient Updated Successfully', 'Success!');
+                toastr.options.hideMethod = 'slideUp';
                 patientId = undefined;
                 loadAllPatients();
             })
             .catch((err) => {
+                toastr.error('Error updating patient', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
                 console.log("Error updating patient:", err);
             });
     }
@@ -148,11 +175,15 @@ const deletePatient = (id) => {
             .doc(id)
             .delete()
             .then(() => {
+                toastr.warning('Patient Deleted', 'Warning!');
+                toastr.options.hideMethod = 'slideUp';
                 alert("Deleted");
                 patientId = undefined;
                 loadAllPatients();
             })
             .catch((err) => {
+                toastr.error('Error Deleting patient', 'Error!');
+                toastr.options.hideMethod = 'slideUp';
                 console.log("Error deleting patient:", err);
             });
     }
@@ -177,12 +208,12 @@ const searchPatient = () => {
                             <td>${patientData.mobile}</td>
                             <td>${patientData.address}</td>
                             <td>${patientData.medicalHistory}</td>
-                            <td>
-                                <button class="btn btn-primary w-100" onclick="updatePatient('${patientRecords.id}')">Update</button>
-                            </td>
-                            <td>
-                                <button class="btn btn-danger w-100" onclick="deletePatient('${patientRecords.id}')">Delete</button>
-                            </td>
+                           <td>
+                            <i class="fa-solid fa-pen-to-square" onclick="updatePatient('${patientRecords.id}')"></i>
+                        </td>
+                        <td>
+                           <i class="fa-solid fa-trash-can" onclick="deletePatient('${patientRecords.id}')"></i>
+                        </td>
                         </tr>
                     `;
                     $('#table-body').append(row);
